@@ -60,7 +60,10 @@ bool MainGameUpdate(float elapsedTime)
 		gameState.spriteId++; // add one to the spriteId when spacebar is pressed
 	}
 	
+	
 	Play::DrawBackground();
+	Play::DrawFontText("64px", "ARROW KEYS TO MOVE UP AND DOWN AND SPACE TO FIRE", { DISPLAY_WIDTH / 2, DISPLAY_HEIGHT - 700}, Play::CENTRE);
+	Play::DrawFontText("132px", "SCORE: " + std::to_string(gameState.score), { DISPLAY_WIDTH - 150, DISPLAY_HEIGHT - 50 }, Play::CENTRE);
 	UpdateFan();
 	UpdateTools();
 	HandlePlayerControls();
@@ -152,10 +155,6 @@ void UpdateTools() {
 		}
 	}
 }
-
-
-
-
 
 // Gets called once when the player quits the game 
 int MainGameExit(void)
